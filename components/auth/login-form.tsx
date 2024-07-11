@@ -7,6 +7,8 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
+import FormError from "@/components/ui/form-error";
+import FormSuccess from "@/components/ui/form-success";
 
 export default function LoginForm() {
 
@@ -60,11 +62,13 @@ export default function LoginForm() {
                                         <FormControl>
                                             <Input {...field} type={"password"} placeholder={"Password"}/>
                                         </FormControl>
-                                        <FormMessage/>
+                                        <FormMessage />
                                     </FormItem>
                                 )}
                             />
                         </div>
+                        <FormError message={""}/>
+                        <FormSuccess message={""}/>
                         <Button type={"submit"} className={"w-full"}>Login</Button>
                     </form>
                 </Form>
